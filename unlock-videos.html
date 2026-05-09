@@ -17,6 +17,35 @@
       --ffd: 'Bodoni Moda', serif; --ffb: 'Nunito Sans', sans-serif; --ffi: 'Bebas Neue', sans-serif;
     }
     body { background: var(--bg); color: var(--tx); font-family: var(--ffb); font-weight: 300; line-height: 1.65; }
+    .trust-bar {
+      background: var(--surf);
+      border-bottom: 1px solid var(--bd);
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      font-size: 0.72rem;
+      color: var(--tx2);
+    }
+    .trust-bar span { display: flex; align-items: center; gap: 0.4rem; }
+    .trust-bar svg { color: var(--gold); width: 14px; height: 14px; }
+    .membership-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.5rem 1rem;
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .footer { text-align: center; padding: 2rem; border-top: 1px solid var(--bd); color: var(--tx3); font-size: 0.72rem; }
+    .footer a { color: var(--tx2); text-decoration: none; }
+    .footer a:hover { color: var(--gold); }
     .back-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; margin: 2rem; color: var(--tx2); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--bd); transition: all 0.25s; }
     .back-link:hover { color: var(--gold); border-color: var(--gold3); }
     .back-link::before { content: '\2190 '; }
@@ -164,6 +193,11 @@
   </style>
 </head>
 <body>
+  <div class="trust-bar">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Secure 256-bit Encryption</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Verified Partner</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 100% Free — No Purchase Required</span>
+  </div>
   <a href="index.html" class="back-link">Back to The Vault</a>
 
   <div class="container">
@@ -171,14 +205,17 @@
       <div class="vault-icon">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>
       </div>
-      <div class="eyebrow">Complete One Task</div>
+      <div class="membership-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        VIP Members Only
+      </div>
       <h1>Unlock Your <em>Video Masterclasses</em></h1>
-      <p class="subtitle">Complete one quick task below to unlock all 6 premium video courses on wealth, entrepreneurship and mindset — stream free, forever.</p>
+      <p class="subtitle">Join 50,000+ members streaming premium video courses on wealth, entrepreneurship and mindset — no credit card required.</p>
     </div>
 
     <div class="locker-section">
-      <div class="locker-label">Complete to Unlock</div>
-      <div class="locker-sub">Choose any offer below and complete it to watch all courses instantly</div>
+      <div class="locker-label">Verify Your Membership</div>
+      <div class="locker-sub">Quick verification to unlock all video masterclasses</div>
       <div class="cpg-locker-wrap">
         <script type="text/javascript" src="https://quartzfiles.com/script_include.php?id=1894955"></script>
       </div>
@@ -187,19 +224,19 @@
           <div class="gate-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1.5" fill="#c9a84c"/></svg>
           </div>
-          <div class="gate-eyebrow">Locked</div>
-          <h2 class="gate-title">Complete the task above<br>to unlock all videos</h2>
-          <p class="gate-sub">Finish any offer above and your full video library will appear here instantly — no purchase needed, ever.</p>
+          <div class="gate-eyebrow">Premium Content Locked</div>
+          <h2 class="gate-title">Verify to unlock all masterclasses</h2>
+          <p class="gate-sub">Complete the quick verification above to access 20+ hours of premium video content — stream free, forever, no purchase needed.</p>
           <div class="gate-count">
+            <div class="gc-item"><div class="gc-num">50K+</div><div class="gc-lbl">Active Members</div></div>
+            <div class="gc-sep"></div>
             <div class="gc-item"><div class="gc-num">6</div><div class="gc-lbl">Premium Courses</div></div>
             <div class="gc-sep"></div>
-            <div class="gc-item"><div class="gc-num">20+</div><div class="gc-lbl">Hours of Content</div></div>
-            <div class="gc-sep"></div>
-            <div class="gc-item"><div class="gc-num">100%</div><div class="gc-lbl">Free Forever</div></div>
+            <div class="gc-item"><div class="gc-num">20+</div><div class="gc-lbl">Hours Free</div></div>
           </div>
           <div class="gate-hint">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            Complete one offer above to unlock everything below
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            One quick verification unlocks everything
           </div>
         </div>
 
@@ -300,6 +337,10 @@
       </div>
     </div>
   </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 The Vault. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
 
   <script>
     (function() {
