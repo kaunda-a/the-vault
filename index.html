@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE VAULT — Claim 20+ Premium Free Resources Instantly</title>
+  <meta name="description" content="Unlock premium ebooks, masterclass videos, and exclusive offers — completely free. Complete one quick task to access everything.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,800;0,900;1,400;1,700&family=Nunito+Sans:wght@200;300;400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #030305;
+      --surf:     #0c0c10;
+      --raised:   #13131a;
+      --bd:       #1d1d26;
+      --bd2:      #28283a;
+      --gold:     #c9a84c;
+      --gold2:    #e8c96a;
+      --gold3:    #8a6e28;
+      --goldG:    rgba(201,168,76,0.08);
+      --red:      #8b1c1c;
+      --redB:     #cc3333;
+      --tx:       #d8d0c4;
+      --tx2:      #7a7268;
+      --tx3:      #32302c;
+      --ffd: 'Bodoni Moda', serif;
+      --ffb: 'Nunito Sans', sans-serif;
+      --ffi: 'Bebas Neue', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--tx);
+      font-family: var(--ffb);
+      font-weight: 300;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* grain overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9000;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/></filter><rect width='200%' height='200%' filter='url(%23n)'/></svg>");
+    }
+
+    /* ─── URGENCY BAR ─── */
+    .urgency-bar {
+      background: linear-gradient(90deg, rgba(139,28,28,0.15), rgba(139,28,28,0.08), rgba(139,28,28,0.15));
+      border-bottom: 1px solid rgba(204,51,51,0.15);
+      padding: 0.55rem 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee { display: flex; white-space: nowrap; }
+    .marquee-track { display: flex; animation: ticker 22s linear infinite; flex-shrink: 0; }
+    .marquee-track span {
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--redB); padding: 0 3rem;
+    }
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* ─── COUNTDOWN BAR ─── */
+    .countdown-bar {
+      background: var(--surf);
+      border-bottom: 1px solid var(--bd);
+      padding: 0.6rem 2rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .cd-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tx2); }
+    .cd-time { font-family: var(--ffi); font-size: 1.25rem; letter-spacing: 0.06em; color: var(--gold); }
+    .cd-sep { color: var(--bd2); font-size: 1.1rem; font-weight: 200; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      padding: 1.1rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(3,3,5,0.98) 0%, rgba(3,3,5,0) 100%);
+      backdrop-filter: blur(6px);
+      transition: background 0.3s;
+    }
+    .nav-logo {
+      font-family: var(--ffi); font-size: 1.4rem; letter-spacing: 0.14em;
+      color: var(--gold); text-decoration: none;
+      display: flex; align-items: center; gap: 0.55rem;
+    }
+    .nav-logo svg { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--tx2); text-decoration: none; font-size: 0.76rem;
+      letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-btn {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      background: transparent; border: 1px solid var(--gold3);
+      color: var(--gold); font-family: var(--ffb); font-size: 0.73rem;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+      transition: all 0.25s;
+    }
+    .nav-btn:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; overflow: hidden;
+      padding: 9rem 2rem 5rem;
+    }
+    #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-glow-ring {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 68%);
+      animation: glow-pulse 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes glow-pulse {
+      0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 1; }
+      50%      { transform: translate(-50%,-50%) scale(1.18); opacity: 0.5; }
+    }
+    .hero-vault-icon {
+      position: relative; z-index: 2;
+      width: 80px; height: 80px;
+      border: 1px solid rgba(201,168,76,0.25);
+      background: rgba(201,168,76,0.06);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.75rem;
+      animation: icon-float 4s ease-in-out infinite;
+    }
+    @keyframes icon-float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    .hero-tag {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.4rem 1.1rem; margin-bottom: 1.5rem;
+      border: 1px solid rgba(201,168,76,0.18);
+      background: rgba(201,168,76,0.04);
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .live-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--redB);
+      animation: blink 1.4s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+    h1.hero-h {
+      position: relative; z-index: 2;
+      font-family: var(--ffd); font-size: clamp(3.8rem, 9vw, 9rem);
+      font-weight: 900; line-height: 0.9; letter-spacing: -0.02em;
+      color: #fff; margin-bottom: 0.4rem;
+    }
+    h1.hero-h em { color: var(--gold); font-style: italic; }
+    .hero-sub {
+      position: relative; z-index: 2;
+      font-size: clamp(0.95rem, 2vw, 1.15rem); color: var(--tx2);
+      font-weight: 300; max-width: 520px; margin: 1.5rem auto 2.75rem;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      position: relative; z-index: 2;
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 1rem 2.2rem;
+      background: linear-gradient(135deg, var(--gold3), var(--gold), var(--gold2));
+      color: #050505; font-family: var(--ffb); font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; position: relative; overflow: hidden;
+      transition: all 0.3s; box-shadow: 0 4px 24px rgba(201,168,76,0.2);
+    }
+    .btn-gold::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(255,255,255,0.18); opacity: 0; transition: opacity 0.3s;
+    }
+    .btn-gold:hover::before { opacity: 1; }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(201,168,76,0.35); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 1rem 2.2rem;
+      border: 1px solid var(--bd2); color: var(--tx2);
+      font-family: var(--ffb); font-weight: 400; font-size: 0.82rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.3s;
+    }
+    .btn-ghost:hover { border-color: var(--gold3); color: var(--gold); }
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: var(--tx3); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+    /* ─── STATS BAR ─── */
+    #stats-bar {
+      background: var(--surf);
+      border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      text-align: center; padding: 2rem 1.5rem;
+      border-right: 1px solid var(--bd);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--ffi); font-size: 3rem; letter-spacing: 0.04em;
+      color: var(--gold); line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--tx2); margin-top: 0.35rem;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    .section-inner { max-width: 1380px; margin: 0 auto; padding: 7rem 4rem; }
+    .section-hdr { text-align: center; margin-bottom: 4rem; }
+    .eyebrow {
+      display: inline-block; font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: var(--ffd); font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700; color: var(--tx); line-height: 1.1; margin-bottom: 0.75rem;
+    }
+    .section-desc { color: var(--tx2); max-width: 500px; margin: 0 auto; font-size: 0.92rem; }
+
+    /* ─── VAULT CARDS ─── */
+    .vault-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px; background: var(--bd);
+    }
+    .vault-card {
+      background: var(--surf); padding: 3rem 2.75rem;
+      position: relative; overflow: hidden;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: background 0.35s;
+    }
+    .vault-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--goldG), transparent);
+      opacity: 0; transition: opacity 0.35s;
+    }
+    .vault-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0; transition: opacity 0.35s;
+    }
+    .vault-card:hover { background: var(--raised); }
+    .vault-card:hover::before, .vault-card:hover::after { opacity: 1; }
+    .vc-icon {
+      width: 54px; height: 54px; margin-bottom: 1.5rem;
+      border: 1px solid rgba(201,168,76,0.15);
+      background: var(--goldG);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; position: relative; z-index: 1;
+    }
+    .vc-badge {
+      display: inline-block; padding: 0.22rem 0.8rem; margin-bottom: 1rem;
+      background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.18);
+      color: var(--gold); font-size: 0.67rem; letter-spacing: 0.15em; text-transform: uppercase;
+      position: relative; z-index: 1;
+    }
+    .vc-title {
+      font-family: var(--ffd); font-size: 1.65rem; font-weight: 700;
+      color: var(--tx); line-height: 1.2; margin-bottom: 0.7rem;
+      position: relative; z-index: 1;
+    }
+    .vc-desc {
+      color: var(--tx2); font-size: 0.87rem; line-height: 1.68;
+      margin-bottom: 2rem; position: relative; z-index: 1; flex: 1;
+    }
+    .vc-list { list-style: none; margin-bottom: 2rem; position: relative; z-index: 1; }
+    .vc-list li {
+      display: flex; align-items: center; gap: 0.65rem;
+      font-size: 0.81rem; color: var(--tx2);
+      padding: 0.35rem 0; border-bottom: 1px solid var(--bd);
+    }
+    .vc-list li:last-child { border: none; }
+    .vc-list li::before { content: '—'; color: var(--gold); font-size: 0.65rem; flex-shrink: 0; }
+    .vc-cta {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: var(--gold); font-size: 0.78rem; letter-spacing: 0.14em;
+      text-transform: uppercase; font-weight: 600;
+      transition: gap 0.3s; position: relative; z-index: 1;
+    }
+    .vault-card:hover .vc-cta { gap: 0.9rem; }
+
+    /* ─── PREVIEW SECTION ─── */
+    #preview { background: var(--surf); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
+    .preview-inner { max-width: 1380px; margin: 0 auto; padding: 7rem 4rem; }
+    .preview-hdr { margin-bottom: 2.5rem; }
+    .preview-subtitle { color: var(--tx2); font-size: 0.88rem; margin-top: 0.3rem; }
+
+    /* EBOOK GRID */
+    .ebook-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--bd); }
+    .ebook-card { background: var(--raised); overflow: hidden; }
+    .ebook-cover {
+      aspect-ratio: 3/4; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ebook-cover-inner {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 1.25rem; text-align: center;
+    }
+    .ec-title {
+      font-family: var(--ffd); font-size: 1.05rem; font-weight: 700;
+      color: #fff; line-height: 1.2; text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+    }
+    .ec-author {
+      font-size: 0.65rem; color: rgba(255,255,255,0.65);
+      font-style: italic; margin-top: 0.35rem; font-weight: 300;
+    }
+    .ebook-lock {
+      position: absolute; inset: 0;
+      background: rgba(3,3,5,0.7); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.35s;
+    }
+    .ebook-card:hover .ebook-lock { opacity: 0; }
+    .ebook-meta { padding: 0.85rem 1rem; }
+    .ebook-name { font-family: var(--ffd); font-size: 0.84rem; font-weight: 600; color: var(--tx); }
+    .ebook-by { font-size: 0.7rem; color: var(--tx2); margin-top: 0.15rem; }
+    .ebook-dl {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      margin-top: 0.5rem; font-size: 0.7rem; color: var(--gold3);
+      letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+    }
+
+    /* VIDEO GRID */
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--bd); margin-top: 1px; }
+    .video-card { background: var(--raised); overflow: hidden; }
+    .video-thumb {
+      aspect-ratio: 16/9; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .vt-bg { position: absolute; inset: 0; }
+    .vt-play {
+      position: relative; z-index: 1;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(201,168,76,0.18); border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center; color: var(--gold);
+    }
+    .video-lock {
+      position: absolute; inset: 0;
+      background: rgba(3,3,5,0.68); backdrop-filter: blur(6px);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .vl-text { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tx2); }
+    .video-meta-box { padding: 0.85rem 1rem; }
+    .video-name { font-size: 0.84rem; font-weight: 400; color: var(--tx); line-height: 1.4; }
+    .video-dur { font-size: 0.7rem; color: var(--tx2); margin-top: 0.2rem; }
+
+    .preview-cta { text-align: center; margin-top: 2rem; }
+
+    /* ─── TESTIMONIALS ─── */
+    #proof { }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .testi {
+      background: var(--surf); border: 1px solid var(--bd); padding: 2.25rem;
+      position: relative;
+    }
+    .testi::before {
+      content: '"'; position: absolute; top: 1rem; right: 1.5rem;
+      font-family: var(--ffd); font-size: 4.5rem; color: var(--gold);
+      opacity: 0.12; line-height: 1;
+    }
+    .stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+    .testi-txt { font-size: 0.9rem; color: var(--tx2); line-height: 1.72; margin-bottom: 1.5rem; }
+    .testi-auth { display: flex; align-items: center; gap: 0.75rem; }
+    .testi-av {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ffi); font-size: 1rem; color: #050505; font-weight: 700;
+    }
+    .testi-name { font-size: 0.82rem; font-weight: 700; color: var(--tx); }
+    .testi-role { font-size: 0.7rem; color: var(--tx2); }
+
+    /* ─── HOW IT WORKS ─── */
+    #how { background: var(--surf); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--bd); margin-top: 3rem; }
+    .step { background: var(--surf); padding: 3rem 2.5rem; border-right: 1px solid var(--bd); }
+    .step:last-child { border-right: none; }
+    .step-num {
+      font-family: var(--ffi); font-size: 4rem; color: var(--bd2);
+      line-height: 1; margin-bottom: 1.25rem;
+    }
+    .step-title { font-family: var(--ffd); font-size: 1.2rem; font-weight: 700; color: var(--tx); margin-bottom: 0.65rem; }
+    .step-desc { font-size: 0.87rem; color: var(--tx2); line-height: 1.7; }
+
+    /* ─── FINAL CTA ─── */
+    #cta-final {
+      position: relative; overflow: hidden;
+      text-align: center; padding: 8rem 4rem;
+      background: var(--bg);
+    }
+    #cta-final::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .cta-h {
+      font-family: var(--ffd); font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700; line-height: 1.0; color: var(--tx);
+      position: relative; margin-bottom: 1rem;
+    }
+    .cta-h em { color: var(--gold); font-style: italic; }
+    .cta-p { color: var(--tx2); max-width: 460px; margin: 0 auto 2.5rem; font-size: 0.95rem; position: relative; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+    .trust-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap; position: relative;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.76rem; color: var(--tx2); letter-spacing: 0.06em;
+    }
+    .trust-item .chk { color: var(--gold); font-size: 0.7rem; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--bd); padding: 1.75rem 4rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo { font-family: var(--ffi); font-size: 1.15rem; letter-spacing: 0.14em; color: var(--gold3); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { color: var(--tx3); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--tx2); }
+    .footer-copy { font-size: 0.7rem; color: var(--tx3); }
+
+    /* ─── REVEAL ANIMATION ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.vis { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      #stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .vault-grid { grid-template-columns: 1fr; }
+      .section-inner { padding: 5rem 1.75rem; }
+      .ebook-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: none; border-bottom: 1px solid var(--bd); }
+      footer { padding: 1.5rem 1.75rem; flex-direction: column; align-items: flex-start; }
+      .preview-inner { padding: 5rem 1.75rem; }
+      #cta-final { padding: 5rem 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <div class="marquee">
+    <div class="marquee-track" id="marquee-track">
+      <span>🔴 LIVE — 2,847 people unlocked the vault today</span>
+      <span>★★★★★ &nbsp; Rated 4.9 by 12,000+ members</span>
+      <span>⚡ Limited daily unlocks available — claim yours now</span>
+      <span>📚 8 free ebooks + 6 video courses + exclusive offers</span>
+      <span>🔴 LIVE — 2,847 people unlocked the vault today</span>
+      <span>★★★★★ &nbsp; Rated 4.9 by 12,000+ members</span>
+      <span>⚡ Limited daily unlocks available — claim yours now</span>
+      <span>📚 8 free ebooks + 6 video courses + exclusive offers</span>
+    </div>
+  </div>
+</div>
+
+<!-- COUNTDOWN BAR -->
+<div class="countdown-bar">
+  <span class="cd-label">Daily vault reset in</span>
+  <span class="cd-time" id="cd-h">--</span>
+  <span class="cd-sep">:</span>
+  <span class="cd-time" id="cd-m">--</span>
+  <span class="cd-sep">:</span>
+  <span class="cd-time" id="cd-s">--</span>
+  <span class="cd-label">— Unlock now before access resets</span>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+      <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+    </svg>
+    THE VAULT
+  </a>
+  <ul class="nav-links">
+    <li><a href="#vault">Resources</a></li>
+    <li><a href="#preview">Preview</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#proof">Reviews</a></li>
+  </ul>
+  <a href="unlock-ebooks.html" class="nav-btn">Unlock Free Access</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-glow-ring"></div>
+
+  <div class="hero-vault-icon">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0110 0v4"/>
+      <circle cx="12" cy="16" r="1.5" fill="#c9a84c"/>
+    </svg>
+  </div>
+
+  <div class="hero-tag">
+    <div class="live-dot"></div>
+    Exclusive Access — 2,847 Unlocks Today
+  </div>
+
+  <h1 class="hero-h">Unlock Your<br><em>Free Library</em></h1>
+
+  <p class="hero-sub">
+    8 wealth-building ebooks, 6 premium video masterclasses &amp; exclusive daily offers — completely free. Complete one quick task to access everything, forever.
+  </p>
+
+  <div class="hero-ctas">
+    <a href="unlock-ebooks.html" class="btn-gold">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Claim Free eBooks
+    </a>
+    <a href="unlock-videos.html" class="btn-ghost">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      Watch Free Videos
+    </a>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Discover what's inside</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div id="stats-bar">
+  <div class="stat">
+    <div class="stat-num" data-target="47392">0</div>
+    <div class="stat-lbl">Total Unlocks</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num" data-target="20">0</div>
+    <div class="stat-lbl">Free Resources</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num" data-target="12847">0</div>
+    <div class="stat-lbl">Active Members</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-lbl">Free to Access</div>
+  </div>
+</div>
+
+<!-- VAULT CARDS -->
+<section id="vault">
+  <div class="section-inner">
+    <div class="section-hdr reveal">
+      <div class="eyebrow">What's Inside</div>
+      <h2 class="section-title">Three Vaults. One Simple Task.</h2>
+      <p class="section-desc">Premium curated resources locked inside each vault. Complete one free task to unlock any — or all three.</p>
+    </div>
+
+    <div class="vault-grid">
+
+      <!-- EBOOKS -->
+      <a href="unlock-ebooks.html" class="vault-card reveal">
+        <div class="vc-icon">📚</div>
+        <div class="vc-badge">8 Free Books</div>
+        <div class="vc-title">Wealth &amp; Wisdom<br>eBook Library</div>
+        <div class="vc-desc">Timeless classics handpicked from history's most successful minds — the books billionaires actually read.</div>
+        <ul class="vc-list">
+          <li>The Science of Getting Rich</li>
+          <li>As a Man Thinketh — James Allen</li>
+          <li>The Art of War — Sun Tzu</li>
+          <li>The Master Key System</li>
+          <li>+ 4 more wealth classics</li>
+        </ul>
+        <div class="vc-cta">
+          Unlock Free eBooks
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- VIDEOS -->
+      <a href="unlock-videos.html" class="vault-card reveal" style="transition-delay:0.1s">
+        <div class="vc-icon">🎬</div>
+        <div class="vc-badge">6 Free Courses</div>
+        <div class="vc-title">Premium Video<br>Masterclasses</div>
+        <div class="vc-desc">Full-length courses on wealth, entrepreneurship, productivity and mindset — sourced from the world's top educators.</div>
+        <ul class="vc-list">
+          <li>Financial Freedom Masterclass</li>
+          <li>Build a Business from $0</li>
+          <li>Millionaire Mindset Deep Dive</li>
+          <li>Productivity Secrets Revealed</li>
+          <li>+ 2 exclusive bonus courses</li>
+        </ul>
+        <div class="vc-cta">
+          Unlock Free Videos
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- OFFERS -->
+      <a href="offers.html" class="vault-card reveal" style="transition-delay:0.2s">
+        <div class="vc-icon">💎</div>
+        <div class="vc-badge">Daily Deals</div>
+        <div class="vc-title">Members-Only<br>Offer Wall</div>
+        <div class="vc-desc">Exclusive cashback deals, free product trials, gift cards and reward programs — updated daily for members.</div>
+        <ul class="vc-list">
+          <li>Free product samples &amp; trials</li>
+          <li>Cashback &amp; reward programs</li>
+          <li>Survey rewards &amp; gift cards</li>
+          <li>Premium tool free trials</li>
+          <li>+ New offers every day</li>
+        </ul>
+        <div class="vc-cta">
+          Browse All Offers
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT PREVIEW -->
+<section id="preview">
+  <div class="preview-inner">
+
+    <!-- EBOOKS PREVIEW -->
+    <div class="preview-hdr reveal">
+      <div class="eyebrow">Locked Library Preview</div>
+      <h2 class="section-title">Your Free eBook Collection</h2>
+      <p class="preview-subtitle">Hover any book to peek inside. One task unlocks all 8 for immediate download.</p>
+    </div>
+
+    <div class="ebook-grid">
+      <div class="ebook-card reveal">
+        <div class="ebook-cover" style="background:linear-gradient(160deg,#1a0a00,#4d2e05)">
+          <div class="ebook-cover-inner">
+            <div class="ec-title">The Science of Getting Rich</div>
+            <div class="ec-author">Wallace D. Wattles</div>
+          </div>
+          <div class="ebook-lock">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+        </div>
+        <div class="ebook-meta">
+          <div class="ebook-name">The Science of Getting Rich</div>
+          <div class="ebook-by">W.D. Wattles · 1910 · Public Domain</div>
+          <div class="ebook-dl">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/><path d="M5 20h14"/></svg>
+            Free Download Included
+          </div>
+        </div>
+      </div>
+
+      <div class="ebook-card reveal" style="transition-delay:0.08s">
+        <div class="ebook-cover" style="background:linear-gradient(160deg,#00100a,#023d22)">
+          <div class="ebook-cover-inner">
+            <div class="ec-title">As a Man Thinketh</div>
+            <div class="ec-author">James Allen</div>
+          </div>
+          <div class="ebook-lock">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+        </div>
+        <div class="ebook-meta">
+          <div class="ebook-name">As a Man Thinketh</div>
+          <div class="ebook-by">James Allen · 1903 · Public Domain</div>
+          <div class="ebook-dl">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/><path d="M5 20h14"/></svg>
+            Free Download Included
+          </div>
+        </div>
+      </div>
+
+      <div class="ebook-card reveal" style="transition-delay:0.16s">
+        <div class="ebook-cover" style="background:linear-gradient(160deg,#0e0000,#3d0505)">
+          <div class="ebook-cover-inner">
+            <div class="ec-title">The Art of War</div>
+            <div class="ec-author">Sun Tzu</div>
+          </div>
+          <div class="ebook-lock">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+        </div>
+        <div class="ebook-meta">
+          <div class="ebook-name">The Art of War</div>
+          <div class="ebook-by">Sun Tzu · ~500 BC · Public Domain</div>
+          <div class="ebook-dl">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/><path d="M5 20h14"/></svg>
+            Free Download Included
+          </div>
+        </div>
+      </div>
+
+      <div class="ebook-card reveal" style="transition-delay:0.24s">
+        <div class="ebook-cover" style="background:linear-gradient(160deg,#07001a,#200055)">
+          <div class="ebook-cover-inner">
+            <div class="ec-title">The Master Key System</div>
+            <div class="ec-author">Charles F. Haanel</div>
+          </div>
+          <div class="ebook-lock">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+        </div>
+        <div class="ebook-meta">
+          <div class="ebook-name">The Master Key System</div>
+          <div class="ebook-by">C.F. Haanel · 1912 · Public Domain</div>
+          <div class="ebook-dl">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/><path d="M5 20h14"/></svg>
+            Free Download Included
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-cta">
+      <a href="unlock-ebooks.html" class="btn-gold">
+        Unlock All 8 Books — Completely Free
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- VIDEOS PREVIEW -->
+    <div class="preview-hdr reveal" style="margin-top:5rem">
+      <div class="eyebrow">Video Vault Preview</div>
+      <h2 class="section-title">Premium Video Masterclasses</h2>
+      <p class="preview-subtitle">6 full-length courses locked inside. One task grants permanent access.</p>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-card reveal">
+        <div class="video-thumb">
+          <div class="vt-bg" style="background:linear-gradient(135deg,#100d00,#332700)"></div>
+          <div class="vt-play">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="video-lock">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <span class="vl-text">Complete a task to watch</span>
+          </div>
+        </div>
+        <div class="video-meta-box">
+          <div class="video-name">Financial Freedom: The Complete Masterclass</div>
+          <div class="video-dur">4h 23m · Full Course</div>
+        </div>
+      </div>
+
+      <div class="video-card reveal" style="transition-delay:0.1s">
+        <div class="video-thumb">
+          <div class="vt-bg" style="background:linear-gradient(135deg,#000d1a,#001f42)"></div>
+          <div class="vt-play">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="video-lock">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <span class="vl-text">Complete a task to watch</span>
+          </div>
+        </div>
+        <div class="video-meta-box">
+          <div class="video-name">Build a Business from Zero — Blueprint Course</div>
+          <div class="video-dur">3h 15m · Full Course</div>
+        </div>
+      </div>
+
+      <div class="video-card reveal" style="transition-delay:0.2s">
+        <div class="video-thumb">
+          <div class="vt-bg" style="background:linear-gradient(135deg,#0d0005,#2b0018)"></div>
+          <div class="vt-play">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="video-lock">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <span class="vl-text">Complete a task to watch</span>
+          </div>
+        </div>
+        <div class="video-meta-box">
+          <div class="video-name">Millionaire Mindset: Rewire Your Brain for Success</div>
+          <div class="video-dur">2h 48m · Full Course</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-cta">
+      <a href="unlock-videos.html" class="btn-gold">
+        Unlock All 6 Courses — Completely Free
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-hdr reveal">
+      <div class="eyebrow">Dead Simple Process</div>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-desc">Three steps. Under two minutes. Lifetime access to everything inside.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-title">Choose Your Resource</div>
+        <div class="step-desc">Pick from ebooks, video courses, or exclusive offers. Each vault is independently unlockable — get one or all three.</div>
+      </div>
+      <div class="step reveal" style="transition-delay:0.1s">
+        <div class="step-num">02</div>
+        <div class="step-title">Complete a Quick Task</div>
+        <div class="step-desc">Browse available offers and complete one free task — sign up for a trial, answer a survey, or try a free product. Takes 60–90 seconds.</div>
+      </div>
+      <div class="step reveal" style="transition-delay:0.2s">
+        <div class="step-num">03</div>
+        <div class="step-title">Instant Unlock</div>
+        <div class="step-desc">Your chosen vault unlocks instantly. Download your ebooks, stream your videos, and browse deals — all yours, forever free.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="proof">
+  <div class="section-inner">
+    <div class="section-hdr reveal">
+      <div class="eyebrow">Member Reviews</div>
+      <h2 class="section-title">47,000+ People Can't Be Wrong</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <div class="testi-txt">I couldn't believe the ebook quality — these are genuinely life-changing books. The Science of Getting Rich alone shifted my whole perspective on wealth. Took me 90 seconds to unlock.</div>
+        <div class="testi-auth">
+          <div class="testi-av" style="background:linear-gradient(135deg,#c9a84c,#8a6e28)">M</div>
+          <div>
+            <div class="testi-name">Michael R.</div>
+            <div class="testi-role">Entrepreneur · Cape Town</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi reveal" style="transition-delay:0.1s">
+        <div class="stars">★★★★★</div>
+        <div class="testi-txt">The video courses are genuinely premium. I've paid R2,000 for worse courses on Udemy. Two minutes, one task, and I had access to 6 full masterclasses. Absolutely mind-blowing value.</div>
+        <div class="testi-auth">
+          <div class="testi-av" style="background:linear-gradient(135deg,#4a8bd4,#1a4a90)">S</div>
+          <div>
+            <div class="testi-name">Sarah K.</div>
+            <div class="testi-role">Marketing Manager · Lagos</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi reveal" style="transition-delay:0.2s">
+        <div class="stars">★★★★★</div>
+        <div class="testi-txt">Found a free Netflix trial and a cashback app through the offer wall that saved me money immediately. The whole thing took 2 minutes and I got R500 in rewards. Legit.</div>
+        <div class="testi-auth">
+          <div class="testi-av" style="background:linear-gradient(135deg,#8bd44a,#3a7010)">T</div>
+          <div>
+            <div class="testi-name">Thabo M.</div>
+            <div class="testi-role">Student · Johannesburg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta-final">
+  <div class="eyebrow">Your Turn</div>
+  <h2 class="cta-h">Ready to Unlock<br><em>Everything?</em></h2>
+  <p class="cta-p">One task. Instant access. 20+ premium resources waiting right now — don't let the daily reset close your window.</p>
+  <div class="cta-btns">
+    <a href="unlock-ebooks.html" class="btn-gold">📚 &nbsp;Claim Free eBooks</a>
+    <a href="unlock-videos.html" class="btn-gold" style="background:linear-gradient(135deg,#1a1a22,#252534);color:var(--gold);box-shadow:none;border:1px solid rgba(201,168,76,0.25)">🎬 &nbsp;Watch Free Videos</a>
+    <a href="offers.html" class="btn-ghost">💎 &nbsp;Browse Offers</a>
+  </div>
+  <div class="trust-row">
+    <div class="trust-item"><span class="chk">✓</span> 100% Free Always</div>
+    <div class="trust-item"><span class="chk">✓</span> No Credit Card</div>
+    <div class="trust-item"><span class="chk">✓</span> Instant Access</div>
+    <div class="trust-item"><span class="chk">✓</span> 47,000+ Members</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">THE VAULT</div>
+  <ul class="footer-links">
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms of Use</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="offers.html">Offer Wall</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 The Vault. All resources are free. Always.</div>
+</footer>
+
+<script>
+// ── PARTICLE CANVAS ──
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let pts = [];
+
+function resize() {
+  canvas.width  = window.innerWidth;
+  canvas.height = canvas.parentElement.offsetHeight;
+}
+
+class Star {
+  constructor(randomLife) {
+    this.reset();
+    if (randomLife) this.life = Math.random() * this.maxLife;
+  }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 1.4 + 0.2;
+    this.vx = (Math.random() - 0.5) * 0.25;
+    this.vy = (Math.random() - 0.5) * 0.25 - 0.08;
+    this.alpha = Math.random() * 0.55 + 0.08;
+    this.life = 0;
+    this.maxLife = Math.random() * 280 + 180;
+  }
+  tick() {
+    this.x += this.vx; this.y += this.vy; this.life++;
+    if (this.life >= this.maxLife || this.y < 0) this.reset();
+  }
+  draw() {
+    const p = this.life / this.maxLife;
+    const fade = p < 0.1 ? p / 0.1 : p > 0.85 ? (1 - p) / 0.15 : 1;
+    ctx.save();
+    ctx.globalAlpha = this.alpha * fade;
+    ctx.fillStyle = '#c9a84c';
+    ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI*2); ctx.fill();
+    ctx.restore();
+  }
+}
+
+function initStars() {
+  pts = Array.from({length: 90}, (_, i) => new Star(true));
+}
+
+function animateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  pts.forEach(p => { p.tick(); p.draw(); });
+  requestAnimationFrame(animateStars);
+}
+
+resize(); initStars(); animateStars();
+window.addEventListener('resize', () => { resize(); initStars(); });
+
+// ── COUNTDOWN ──
+function updateCountdown() {
+  const now = new Date();
+  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+  const diff = midnight - now;
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── COUNTER ANIMATION ──
+function animCount(el, target, dur = 1800) {
+  const start = performance.now();
+  const fmt = n => n.toLocaleString();
+  const run = now => {
+    const t = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    el.textContent = fmt(Math.floor(ease * target));
+    if (t < 1) requestAnimationFrame(run);
+  };
+  requestAnimationFrame(run);
+}
+
+// ── INTERSECTION OBSERVER ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('vis');
+    const cnt = e.target.querySelector('[data-target]');
+    if (cnt) animCount(cnt, parseInt(cnt.dataset.target));
+    observer.unobserve(e.target);
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.querySelectorAll('[data-target]').forEach(el => {
+  const ob = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      animCount(e.target, parseInt(e.target.dataset.target));
+      ob.unobserve(e.target);
+    });
+  }, { threshold: 0.5 });
+  ob.observe(el);
+});
+
+// ── NAV SCROLL STYLE ──
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('main-nav');
+  nav.style.background = window.scrollY > 60
+    ? 'rgba(3,3,5,0.97)' : '';
+});
+</script>
+</body>
+</html>

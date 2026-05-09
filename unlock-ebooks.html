@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlock Free eBooks — The Vault</title>
+  <meta name="description" content="Complete one quick task to unlock 8 premium wealth-building eBooks for free. Project Gutenberg public domain books.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,800;0,900;1,400;1,700&family=Nunito+Sans:wght@200;300;400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #030305; --surf: #0c0c10; --raised: #13131a; --bd: #1d1d26; --bd2: #28283a;
+      --gold: #c9a84c; --gold2: #e8c96a; --gold3: #8a6e28; --goldG: rgba(201,168,76,0.08);
+      --red: #8b1c1c; --redB: #cc3333; --tx: #d8d0c4; --tx2: #7a7268; --tx3: #32302c;
+      --ffd: 'Bodoni Moda', serif; --ffb: 'Nunito Sans', sans-serif; --ffi: 'Bebas Neue', sans-serif;
+    }
+    body { background: var(--bg); color: var(--tx); font-family: var(--ffb); font-weight: 300; line-height: 1.65; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; margin: 2rem; color: var(--tx2); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--bd); transition: all 0.25s; }
+    .back-link:hover { color: var(--gold); border-color: var(--gold3); }
+    .back-link::before { content: '\2190 '; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 3rem 6rem; }
+    .vault-header { text-align: center; padding: 3rem 0 2rem; }
+    .vault-icon { width: 80px; height: 80px; border: 1px solid rgba(201,168,76,0.25); background: rgba(201,168,76,0.06); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .vault-icon svg { color: var(--gold); }
+    .eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    h1 { font-family: var(--ffd); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+    h1 em { color: var(--gold); font-style: italic; }
+    .subtitle { color: var(--tx2); max-width: 500px; margin: 0 auto 3rem; font-size: 0.95rem; line-height: 1.7; }
+    .locker-section { background: var(--surf); border: 1px solid var(--bd); border-radius: 4px; padding: 3rem; margin-bottom: 3rem; text-align: center; }
+    .locker-label { font-family: var(--ffi); font-size: 1.2rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.5rem; }
+    .locker-sub { font-size: 0.82rem; color: var(--tx2); margin-bottom: 2.5rem; }
+    .cpg-locker-wrap {
+      min-height: 250px;
+      background: var(--raised);
+      border: 1px solid var(--bd);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+    #bo3qudy {
+      width: 100%;
+      max-width: 100%;
+      background: transparent;
+      border-radius: 3px;
+    }
+    #bo3qudy .cboxIframe {
+      background: transparent;
+      border-radius: 3px;
+    }
+    #w6rwi5jContent {
+      background: transparent !important;
+      box-shadow: none !important;
+      border-radius: 3px;
+    }
+    #w6rwi5jWrapper,
+    #w6rwi5jOverlay {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 99999 !important;
+      overflow: hidden;
+    }
+    #w6rwi5jWrapper * { box-sizing: border-box; }
+    #w6rwi5jOverlay { background: rgba(3,3,5,0.85) !important; }
+    #w6rwi5jLoadedContent { overflow: auto; }
+    #w6rwi5jClose {
+      position: absolute;
+      top: -36px;
+      right: 0;
+      background: none;
+      font-size: 18px;
+      color: var(--tx2);
+      text-indent: 0;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    #w6rwi5jClose:hover { opacity: 1; color: var(--gold); }
+    #w6rwi5jClose::before { content: '\2715'; }
+    #w6rwi5jTitle { display: none; }
+
+    .gate-overlay {
+      position: relative;
+      background: var(--surf);
+      border: 1px solid var(--bd);
+      border-radius: 4px;
+      padding: 5rem 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .gate-overlay::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .gate-icon {
+      width: 72px; height: 72px;
+      border: 1px solid rgba(201,168,76,0.2);
+      background: rgba(201,168,76,0.06);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.06);opacity:0.7} }
+    .gate-eyebrow { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--redB); margin-bottom: 0.75rem; }
+    .gate-title { font-family: var(--ffd); font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+    .gate-sub { color: var(--tx2); font-size: 0.88rem; max-width: 420px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .gate-count { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .gc-item { text-align: center; }
+    .gc-num { font-family: var(--ffi); font-size: 1.8rem; color: var(--gold); letter-spacing: 0.06em; }
+    .gc-lbl { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tx2); margin-top: 0.25rem; }
+    .gc-sep { width: 1px; height: 40px; background: var(--bd); }
+    .gate-hint { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tx3); border: 1px solid var(--bd); padding: 0.5rem 1rem; }
+    .gate-hint svg { color: var(--gold); }
+
+    #content-locked { display: block; }
+    #content-locked.gate-hide .gate-overlay,
+    #content-locked.gate-hide .books-section { display: none; }
+    #content-locked.gate-hide .books-section.revealed { display: block; }
+    .gate-overlay { margin-top: 2rem; }
+    #b98r4usqhd,
+    #w6rwi5jOverlay,
+    #w6rwi5jWrapper {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 10 !important;
+      overflow: hidden;
+    }
+    #w6rwi5jOverlay { background: rgba(3,3,5,0.82) !important; }
+    #w6rwi5jContent {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 90% !important;
+      max-width: 560px !important;
+      background: var(--surf) !important;
+      border: 1px solid var(--bd) !important;
+      border-radius: 4px !important;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6) !important;
+      overflow: visible !important;
+    }
+    #w6rwi5jLoadedContent { overflow: auto; max-height: 70vh; }
+    #w6rwi5jTitle { display: none !important; }
+    #w6rwi5jClose {
+      position: absolute !important;
+      top: -32px !important;
+      right: 0 !important;
+      background: none !important;
+      color: var(--tx2) !important;
+      font-size: 16px !important;
+      text-indent: 0 !important;
+      cursor: pointer !important;
+      opacity: 0.6;
+    }
+    #w6rwi5jClose:hover { opacity: 1; }
+    #w6rwi5jClose::before { content: '\2715'; }
+    #w6rwi5jClose:hover::before { color: var(--gold); }
+    #bo3qudy { display: block !important; background: transparent !important; }
+    #txtheader { color: var(--tx) !important; font-size: 16px !important; margin-bottom: 10px !important; }
+    #txtheader div { color: var(--tx) !important; }
+    #txtheader .translate_text,
+    #txtheader font { color: var(--tx) !important; }
+    #offerlst { min-height: 80px !important; }
+    .link_a { color: var(--gold) !important; font-weight: 600 !important; text-decoration: none !important; }
+    .link_a:hover { color: var(--gold2) !important; border: none !important; background: transparent !important; }
+    .each_p_elm { margin: 6px 0 !important; }
+    .txt_wait { color: var(--tx2) !important; }
+    .txt_goback { color: var(--tx2) !important; }
+    #offerwait { color: var(--tx2) !important; }
+    #offerwait p { color: var(--tx2) !important; }
+    .nNote { display: none !important; }
+    #main_back { display: none !important; }
+    #main_div { display: none !important; }
+    #InlineBoxDiv { display: none !important; }
+    .books-section { }
+    .books-hdr { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--bd); }
+    .books-hdr h2 { font-family: var(--ffd); font-size: 2rem; font-weight: 700; color: var(--tx); }
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .book-card { background: var(--surf); border: 1px solid var(--bd); border-radius: 3px; overflow: hidden; transition: border-color 0.3s; }
+    .book-card:hover { border-color: var(--gold3); }
+    .book-cover { height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; position: relative; }
+    .book-cover::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .bc-title { font-family: var(--ffd); font-size: 1.15rem; font-weight: 700; color: #fff; line-height: 1.25; }
+    .bc-author { font-size: 0.72rem; color: rgba(255,255,255,0.6); font-style: italic; margin-top: 0.5rem; }
+    .book-info { padding: 1.25rem; }
+    .bi-title { font-size: 0.88rem; font-weight: 600; color: var(--tx); margin-bottom: 0.3rem; }
+    .bi-meta { font-size: 0.72rem; color: var(--tx2); margin-bottom: 1rem; }
+    .bi-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .dl-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 1rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; text-decoration: none; transition: all 0.25s; }
+    .dl-pdf { background: var(--gold); color: #050505; }
+    .dl-pdf:hover { background: var(--gold2); }
+    .dl-epub { border: 1px solid var(--bd2); color: var(--tx2); }
+    .dl-epub:hover { border-color: var(--gold3); color: var(--gold); }
+    .dl-txt { border: 1px solid var(--bd); color: var(--tx3); }
+    .dl-txt:hover { border-color: var(--bd2); color: var(--tx2); }
+    .unlocked-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 0.9rem; margin-bottom: 0.75rem; }
+    .unlocked-badge::before { content: '\2713'; }
+    .bonus-note { background: var(--surf); border: 1px solid var(--bd); border-radius: 3px; padding: 1.5rem 2rem; margin-top: 3rem; text-align: center; }
+    .bonus-note p { color: var(--tx2); font-size: 0.85rem; margin: 0; }
+    .bonus-note strong { color: var(--gold); }
+    @media (max-width: 640px) { .container { padding: 1rem 1.5rem 4rem; } .locker-section { padding: 2rem 1.5rem; } .books-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link">Back to The Vault</a>
+
+  <div class="container">
+    <div class="vault-header">
+      <div class="vault-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>
+      </div>
+      <div class="eyebrow">Complete One Task</div>
+      <h1>Unlock Your <em>Free eBooks</em></h1>
+      <p class="subtitle">Complete one quick task below to unlock instant access to all 8 premium wealth-building eBooks — free, forever, yours to keep.</p>
+    </div>
+
+    <div class="locker-section">
+      <div class="locker-label">Complete to Unlock</div>
+      <div class="locker-sub">Choose any offer below and complete it to reveal your books instantly</div>
+      <div class="cpg-locker-wrap">
+        <script type="text/javascript" src="https://quartzfiles.com/script_include.php?id=1894762"></script>
+      </div>
+      <div id="content-locked" class="gate-hide">
+        <div class="gate-overlay">
+          <div class="gate-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1.5" fill="#c9a84c"/></svg>
+          </div>
+          <div class="gate-eyebrow">Locked</div>
+          <h2 class="gate-title">Complete the task above<br>to unlock 8 eBooks</h2>
+          <p class="gate-sub">Finish any offer above and your books will appear here instantly — no purchase needed, ever.</p>
+          <div class="gate-count">
+            <div class="gc-item"><div class="gc-num">8</div><div class="gc-lbl">Premium eBooks</div></div>
+            <div class="gc-sep"></div>
+            <div class="gc-item"><div class="gc-num">100%</div><div class="gc-lbl">Free Forever</div></div>
+            <div class="gc-sep"></div>
+            <div class="gc-item"><div class="gc-num">PDF+EPUB</div><div class="gc-lbl">Instant Download</div></div>
+          </div>
+          <div class="gate-hint">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Complete one offer above to unlock everything below
+          </div>
+        </div>
+        <div class="books-section">
+          <div class="books-hdr">
+            <div class="unlocked-badge">Unlocked for You</div>
+            <h2>Your Free eBook Collection</h2>
+          </div>
+        </div>
+
+        <div class="books-grid">
+
+          <div class="book-card">
+            <div class="book-cover" style="background:linear-gradient(160deg,#1a0a00,#3d2004)">
+              <div class="bc-title">The Science of Getting Rich</div>
+              <div class="bc-author">Wallace D. Wattles, 1910</div>
+            </div>
+            <div class="book-info">
+              <div class="bi-title">The Science of Getting Rich</div>
+              <div class="bi-meta">W.D. Wattles · 148 KB · Public Domain</div>
+              <div class="bi-btns">
+                <a href="https://www.gutenberg.org/cache/epub/59844/pg59844-h.zip" class="dl-btn dl-pdf" download>PDF</a>
+                <a href="https://www.gutenberg.org/ebooks/59844.epub.images" class="dl-btn dl-epub">EPUB</a>
+                <a href="https://www.gutenberg.org/ebooks/59844.txt.utf-8" class="dl-btn dl-txt">TXT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" style="background:linear-gradient(160deg,#00100a,#023d22)">
+              <div class="bc-title">As a Man Thinketh</div>
+              <div class="bc-author">James Allen, 1903</div>
+            </div>
+            <div class="book-info">
+              <div class="bi-title">As a Man Thinketh</div>
+              <div class="bi-meta">James Allen · 64 KB · Public Domain</div>
+              <div class="bi-btns">
+                <a href="https://www.gutenberg.org/cache/epub/4507/pg4507-h.zip" class="dl-btn dl-pdf" download>PDF</a>
+                <a href="https://www.gutenberg.org/ebooks/4507.epub.images" class="dl-btn dl-epub">EPUB</a>
+                <a href="https://www.gutenberg.org/ebooks/4507.txt.utf-8" class="dl-btn dl-txt">TXT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" style="background:linear-gradient(160deg,#0e0000,#3d0505)">
+              <div class="bc-title">The Art of War</div>
+              <div class="bc-author">Sun Tzu, ~500 BC</div>
+            </div>
+            <div class="book-info">
+              <div class="bi-title">The Art of War</div>
+              <div class="bi-meta">Sun Tzu · 280 KB · Public Domain</div>
+              <div class="bi-btns">
+                <a href="https://www.gutenberg.org/cache/epub/20594/pg20594-h.zip" class="dl-btn dl-pdf" download>PDF</a>
+                <a href="https://www.gutenberg.org/ebooks/20594.epub.images" class="dl-btn dl-epub">EPUB</a>
+                <a href="https://www.gutenberg.org/ebooks/20594.txt.utf-8" class="dl-btn dl-txt">TXT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" style="background:linear-gradient(160deg,#07001a,#200055)">
+              <div class="bc-title">Franklin's Way to Wealth</div>
+              <div class="bc-author">Benjamin Franklin, 1758</div>
+            </div>
+            <div class="book-info">
+              <div class="bi-title">Franklin's Way to Wealth</div>
+              <div class="bi-meta">Benjamin Franklin · 40 KB · Public Domain</div>
+              <div class="bi-btns">
+                <a href="https://www.gutenberg.org/cache/epub/43855/pg43855-h.zip" class="dl-btn dl-pdf" download>PDF</a>
+                <a href="https://www.gutenberg.org/ebooks/43855.epub.images" class="dl-btn dl-epub">EPUB</a>
+                <a href="https://www.gutenberg.org/ebooks/43855.txt.utf-8" class="dl-btn dl-txt">TXT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" style="background:linear-gradient(160deg,#0a0500,#2a1800)">
+              <div class="bc-title">The Art of Money Getting</div>
+              <div class="bc-author">P.T. Barnum, 1880</div>
+            </div>
+            <div class="book-info">
+              <div class="bi-title">The Art of Money Getting</div>
+              <div class="bi-meta">P.T. Barnum · 94 KB · Public Domain</div>
+              <div class="bi-btns">
+                <a href="https://www.gutenberg.org/cache/epub/8581/pg8581-h.zip" class="dl-btn dl-pdf" download>PDF</a>
+                <a href="https://www.gutenberg.org/ebooks/8581.epub.images" class="dl-btn dl-epub">EPUB</a>
+                <a href="https://www.gutenberg.org/ebooks/8581.txt.utf-8" class="dl-btn dl-txt">TXT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" style="background:linear-gradient(160deg,#00100e,#003328)">
+              <div class="bc-title">How to Succeed</div>
+              <div class="bc-author">Orison Swett Marden, 1900</div>
+            </div>
+            <div class="book-info">
+              <div class="bi-title">How to Succeed</div>
+              <div class="bi-meta">Orison Swett Marden · 447 KB · Public Domain</div>
+              <div class="bi-btns">
+                <a href="https://www.gutenberg.org/cache/epub/20513/pg20513-h.zip" class="dl-btn dl-pdf" download>PDF</a>
+                <a href="https://www.gutenberg.org/ebooks/20513.epub.images" class="dl-btn dl-epub">EPUB</a>
+                <a href="https://www.gutenberg.org/ebooks/20513.txt.utf-8" class="dl-btn dl-txt">TXT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" style="background:linear-gradient(160deg,#05000e,#150030)">
+              <div class="bc-title">Mastery of Self</div>
+              <div class="bc-author">Frank C. Haddock, 1915</div>
+            </div>
+            <div class="book-info">
+              <div class="bi-title">Mastery of Self for Wealth, Power &amp; Success</div>
+              <div class="bi-meta">Frank C. Haddock · 149 KB · Public Domain</div>
+              <div class="bi-btns">
+                <a href="https://www.gutenberg.org/cache/epub/4286/pg4286-h.zip" class="dl-btn dl-pdf" download>PDF</a>
+                <a href="https://www.gutenberg.org/ebooks/4286.epub.images" class="dl-btn dl-epub">EPUB</a>
+                <a href="https://www.gutenberg.org/ebooks/4286.txt.utf-8" class="dl-btn dl-txt">TXT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" style="background:linear-gradient(160deg,#0e0a00,#302500)">
+              <div class="bc-title">One Thousand Ways to Make Money</div>
+              <div class="bc-author">Page Fox, 1897</div>
+            </div>
+            <div class="book-info">
+              <div class="bi-title">One Thousand Ways to Make Money</div>
+              <div class="bi-meta">Page Fox · 547 KB · Public Domain</div>
+              <div class="bi-btns">
+                <a href="https://www.gutenberg.org/cache/epub/56006/pg56006-h.zip" class="dl-btn dl-pdf" download>PDF</a>
+                <a href="https://www.gutenberg.org/ebooks/56006.epub.images" class="dl-btn dl-epub">EPUB</a>
+                <a href="https://www.gutenberg.org/ebooks/56006.txt.utf-8" class="dl-btn dl-txt">TXT</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bonus-note">
+          <p><strong>+ Your Bonus:</strong> We're also including <strong>Think and Grow Rich</strong> (Napoleon Hill, 1937 — public domain) as an extra gift. <a href="https://sacred-texts.com/nth/tgr/tgr00.htm" target="_blank" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold3)">Read it free online here</a> — no download needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var CONTENT_KEY = 'vault_ebooks_unlocked';
+
+      function checkUnlock() {
+        if (localStorage.getItem(CONTENT_KEY) === '1') {
+          var el = document.getElementById('content-locked');
+          if (el) {
+            el.classList.remove('gate-hide');
+            el.classList.add('unlocked');
+            var booksSection = el.querySelector('.books-section');
+            if (booksSection) booksSection.classList.add('revealed');
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+
+      if (localStorage.getItem(CONTENT_KEY) === '1') {
+        checkUnlock();
+      }
+
+      var timeout = setInterval(function() {
+        checkUnlock();
+        if (localStorage.getItem(CONTENT_KEY) === '1') clearInterval(timeout);
+      }, 1500);
+
+      window.unlockVault = function() {
+        localStorage.setItem(CONTENT_KEY, '1');
+        var el = document.getElementById('content-locked');
+        if (el) {
+          el.classList.remove('gate-hide');
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusive Offers — The Vault</title>
+  <meta name="description" content="Browse exclusive cashback deals, free trials, and reward offers — updated daily for members.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,800;0,900;1,400;1,700&family=Nunito+Sans:wght@200;300;400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #030305; --surf: #0c0c10; --raised: #13131a; --bd: #1d1d26; --bd2: #28283a;
+      --gold: #c9a84c; --gold2: #e8c96a; --gold3: #8a6e28; --goldG: rgba(201,168,76,0.08);
+      --tx: #d8d0c4; --tx2: #7a7268; --tx3: #32302c;
+      --ffd: 'Bodoni Moda', serif; --ffb: 'Nunito Sans', sans-serif; --ffi: 'Bebas Neue', sans-serif;
+    }
+    body { background: var(--bg); color: var(--tx); font-family: var(--ffb); font-weight: 300; line-height: 1.65; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; margin: 2rem; color: var(--tx2); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--bd); transition: all 0.25s; }
+    .back-link:hover { color: var(--gold); border-color: var(--gold3); }
+    .back-link::before { content: '\2190 '; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 3rem 6rem; }
+    .vault-header { text-align: center; padding: 3rem 0 2rem; }
+    .vault-icon { width: 80px; height: 80px; border: 1px solid rgba(201,168,76,0.25); background: rgba(201,168,76,0.06); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .vault-icon svg { color: var(--gold); }
+    .eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    h1 { font-family: var(--ffd); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+    h1 em { color: var(--gold); font-style: italic; }
+    .subtitle { color: var(--tx2); max-width: 500px; margin: 0 auto 3rem; font-size: 0.95rem; line-height: 1.7; }
+    .locker-section { background: var(--surf); border: 1px solid var(--bd); border-radius: 4px; padding: 3rem; margin-bottom: 3rem; text-align: center; }
+    .locker-label { font-family: var(--ffi); font-size: 1.2rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.5rem; }
+    .locker-sub { font-size: 0.82rem; color: var(--tx2); margin-bottom: 2.5rem; }
+    .cpg-locker-wrap {
+      min-height: 250px;
+      background: var(--raised);
+      border: 1px solid var(--bd);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+    #grip_wall {
+      font-family: var(--ffb) !important;
+      background: var(--surf) !important;
+      border: 1px solid var(--bd) !important;
+      border-radius: 3px !important;
+      padding: 1.5rem !important;
+      width: 100% !important;
+    }
+    #txtheader { text-align: center !important; margin-bottom: 8px !important; padding: 0 !important; }
+    #txtheader div { color: var(--tx) !important; }
+    #txtheader .translate_text, #txtheader font { color: var(--tx) !important; font-size: 16px !important; font-family: var(--ffd) !important; }
+    #smallTitle { display: none !important; }
+    #offerlst {
+      padding: 0 !important;
+      min-height: 80px !important;
+      font-size: 14px !important;
+      display: block !important;
+    }
+    #offerlst table { width: 100% !important; }
+    .grip_title { color: var(--tx) !important; font-weight: 600 !important; font-size: 14px !important; padding: 2px 0 !important; }
+    .grip_desc { color: var(--tx2) !important; font-size: 12px !important; padding: 2px 0 !important; }
+    .link_a { color: var(--gold) !important; font-weight: 600 !important; text-decoration: none !important; font-size: 14px !important; }
+    .link_a:hover { color: var(--gold2) !important; border: none !important; background: transparent !important; }
+    .point_holder { background: var(--gold) !important; color: #050505 !important; font-size: 12px !important; padding: 4px 8px !important; }
+    .point_name_holder { font-size: 10px !important; }
+    .contentProgress { background: var(--bd) !important; height: 5px !important; }
+    .barG { background: var(--gold) !important; border-color: var(--gold3) !important; height: 5px !important; }
+    .grip_img_holder { width: 60px !important; }
+    .grip_img { max-height: 50px !important; max-width: 60px !important; border-radius: 3px !important; }
+    .offer_sep { display: none !important; }
+    #offerwait {
+      display: none !important;
+      color: var(--tx2) !important;
+      padding: 2rem 0 !important;
+      font-size: 14px !important;
+      text-align: center !important;
+    }
+    #offerwait p { color: var(--tx2) !important; }
+    #offerload { display: none !important; }
+    .txt_goback { color: var(--tx2) !important; font-size: 14px !important; }
+    .txt_wait { color: var(--tx2) !important; }
+    #main_back { display: none !important; }
+    #main_div { display: none !important; }
+    #InlineBoxDiv { display: none !important; }
+    #InlineBoxMainOuterLayer { display: none !important; }
+    .tipsy { display: none !important; }
+    .unlocked-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 0.9rem; margin-bottom: 0.75rem; }
+    .unlocked-badge::before { content: '\2713'; }
+    .section-hdr { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--bd); }
+    .section-hdr h2 { font-family: var(--ffd); font-size: 2rem; font-weight: 700; color: var(--tx); }
+    .offers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .offer-card { background: var(--surf); border: 1px solid var(--bd); border-radius: 3px; padding: 1.75rem; transition: border-color 0.3s; display: flex; flex-direction: column; gap: 1rem; }
+    .offer-card:hover { border-color: var(--gold3); }
+    .offer-icon { width: 48px; height: 48px; border: 1px solid rgba(201,168,76,0.15); background: var(--goldG); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+    .offer-title { font-family: var(--ffd); font-size: 1.1rem; font-weight: 700; color: var(--tx); }
+    .offer-desc { font-size: 0.83rem; color: var(--tx2); line-height: 1.65; flex: 1; }
+    .offer-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .offer-tag { background: var(--goldG); border: 1px solid rgba(201,168,76,0.18); color: var(--gold3); padding: 0.15rem 0.5rem; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .offer-tag.green { background: rgba(76,175,80,0.08); border-color: rgba(76,175,80,0.2); color: #4caf50; }
+    .offer-cta { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1.1rem; background: var(--gold); color: #050505; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: all 0.25s; width: fit-content; }
+    .offer-cta:hover { background: var(--gold2); }
+    .updated { text-align: center; color: var(--tx3); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; }
+    .gate-overlay {
+      position: relative;
+      background: var(--surf);
+      border: 1px solid var(--bd);
+      border-radius: 4px;
+      padding: 5rem 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .gate-overlay::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .gate-icon {
+      width: 72px; height: 72px;
+      border: 1px solid rgba(201,168,76,0.2);
+      background: rgba(201,168,76,0.06);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.06);opacity:0.7} }
+    .gate-eyebrow { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--redB); margin-bottom: 0.75rem; }
+    .gate-title { font-family: var(--ffd); font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+    .gate-sub { color: var(--tx2); font-size: 0.88rem; max-width: 420px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .gate-count { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .gc-item { text-align: center; }
+    .gc-num { font-family: var(--ffi); font-size: 1.8rem; color: var(--gold); letter-spacing: 0.06em; }
+    .gc-lbl { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tx2); margin-top: 0.25rem; }
+    .gc-sep { width: 1px; height: 40px; background: var(--bd); }
+    .gate-hint { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tx3); border: 1px solid var(--bd); padding: 0.5rem 1rem; }
+    .gate-hint svg { color: var(--gold); }
+    #content-locked { display: block; }
+    #content-locked.gate-hide .gate-overlay,
+    #content-locked.gate-hide .updated,
+    #content-locked.gate-hide .section-hdr,
+    #content-locked.gate-hide .offers-section { display: none; }
+    #content-locked.gate-hide .offers-section.revealed,
+    #content-locked.gate-hide .section-hdr.revealed,
+    #content-locked.gate-hide .updated.revealed { display: block; }
+    .gate-overlay { margin-top: 2rem; }
+    @media (max-width: 640px) { .container { padding: 1rem 1.5rem 4rem; } .locker-section { padding: 2rem 1.5rem; } .offers-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link">Back to The Vault</a>
+
+  <div class="container">
+    <div class="vault-header">
+      <div class="vault-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>
+      </div>
+      <div class="eyebrow">Complete One Task</div>
+      <h1>Unlock <em>Exclusive Offers</em></h1>
+      <p class="subtitle">Complete one quick task to access daily updated free trials, cashback deals, and reward programs — all 100% free.</p>
+    </div>
+
+    <div class="locker-section">
+      <div class="locker-label">Complete to Unlock</div>
+      <div class="locker-sub">Choose any offer below and complete it to access all deals instantly</div>
+      <div class="cpg-locker-wrap">
+        <script type="text/javascript" src="https://quartzfiles.com/script_include.php?id=1894949"></script>
+      </div>
+      <div id="content-locked" class="gate-hide">
+        <div class="gate-overlay">
+          <div class="gate-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1.5" fill="#c9a84c"/></svg>
+          </div>
+          <div class="gate-eyebrow">Locked</div>
+          <h2 class="gate-title">Complete the task above<br>to unlock all exclusive offers</h2>
+          <p class="gate-sub">Finish any offer above and get instant access to free trials, product samples and reward deals — updated daily.</p>
+          <div class="gate-count">
+            <div class="gc-item"><div class="gc-num">12+</div><div class="gc-lbl">Free Deals</div></div>
+            <div class="gc-sep"></div>
+            <div class="gc-item"><div class="gc-num">100%</div><div class="gc-lbl">No Credit Card</div></div>
+            <div class="gc-sep"></div>
+            <div class="gc-item"><div class="gc-num">Daily</div><div class="gc-lbl">New Offers</div></div>
+          </div>
+          <div class="gate-hint">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Complete one offer above to unlock everything below
+          </div>
+        </div>
+
+        <div class="updated">Updated daily — new offers added regularly</div>
+        <div class="section-hdr">
+          <div class="unlocked-badge">Unlocked for You</div>
+          <h2>Members-Only Offers</h2>
+        </div>
+
+      <div class="offers-grid offers-section">
+
+        <div class="offer-card">
+          <div class="offer-icon">YNAB</div>
+          <div class="offer-tags"><span class="offer-tag green">No Credit Card</span><span class="offer-tag">Money Tool</span></div>
+          <div class="offer-title">YNAB Budgeting Software — 34-Day Free Trial</div>
+          <div class="offer-desc">Take control of your money with zero-based budgeting. The average YNAB user saves $6,000 in their first year. 100% free for 34 days — no credit card required.</div>
+          <a href="https://www.youneedabudget.com/our-free-34-day-trial/" target="_blank" class="offer-cta">Claim Free Trial →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">BigCommerce</div>
+          <div class="offer-tags"><span class="offer-tag green">No Credit Card</span><span class="offer-tag">Business Tool</span></div>
+          <div class="offer-title">BigCommerce — 15-Day Free Trial</div>
+          <div class="offer-desc">Launch your online store with award-winning e-commerce software. No credit card required. Full access to all features during your trial period.</div>
+          <a href="https://www.bigcommerce.com/essentials/free-trial/" target="_blank" class="offer-cta">Start Free Trial →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">HubSpot</div>
+          <div class="offer-tags"><span class="offer-tag green">No Credit Card</span><span class="offer-tag">Marketing Tool</span></div>
+          <div class="offer-title">HubSpot CRM — 14-Day Free Trial</div>
+          <div class="offer-desc">Powerful marketing, sales and customer service tools used by 200,000+ companies. Full access to all hubs — no credit card needed.</div>
+          <a href="https://www.hubspot.com/products/crm" target="_blank" class="offer-cta">Get Free Trial →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">Shopify</div>
+          <div class="offer-tags"><span class="offer-tag green">No Credit Card</span><span class="offer-tag">E-Commerce</span></div>
+          <div class="offer-title">Shopify — 3-Day Free Trial ($1/mo after)</div>
+          <div class="offer-desc">Build your e-commerce empire on the platform powering 4M+ businesses worldwide. Start selling online in minutes — free trial available.</div>
+          <a href="https://www.shopify.com/free-trial" target="_blank" class="offer-cta">Start Your Store →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">Xero</div>
+          <div class="offer-tags"><span class="offer-tag green">No Credit Card</span><span class="offer-tag">Accounting</span></div>
+          <div class="offer-title">Xero Accounting — 30-Day Free Trial</div>
+          <div class="offer-desc">Award-winning online accounting software used by 4M+ businesses. Track expenses, invoices and cash flow — completely free for 30 days.</div>
+          <a href="https://www.xero.com/us/xero-free-trial/" target="_blank" class="offer-cta">Try Xero Free →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">PINCHme</div>
+          <div class="offer-tags"><span class="offer-tag green">100% Free</span><span class="offer-tag">Product Samples</span></div>
+          <div class="offer-title">PINCHme — Free Product Samples</div>
+          <div class="offer-desc">Receive free products to test at home — makeup, snacks, household items and more. Just complete a profile and answer surveys about what you like.</div>
+          <a href="https://www.pinch.me/" target="_blank" class="offer-cta">Get Free Samples →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">Influenster</div>
+          <div class="offer-tags"><span class="offer-tag green">100% Free</span><span class="offer-tag">Product Testing</span></div>
+          <div class="offer-title">Influenster — VoxBox Program</div>
+          <div class="offer-desc">Get free VoxBoxes packed with premium products to test and review. Browse categories, complete quick tasks and earn freebies monthly.</div>
+          <a href="https://www.influenster.com/" target="_blank" class="offer-cta">Join Free →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">Amazon</div>
+          <div class="offer-tags"><span class="offer-tag green">100% Free</span><span class="offer-tag">Product Samples</span></div>
+          <div class="offer-title">Amazon "Send Me a Sample"</div>
+          <div class="offer-desc">Say "Alexa, send me a sample" to receive free product samples from participating brands delivered to your door — no purchase needed.</div>
+          <a href="https://www.amazon.com/send-me-a-sample" target="_blank" class="offer-cta">Get Free Samples →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">Hostinger</div>
+          <div class="offer-tags"><span class="offer-tag green">Discount Deal</span><span class="offer-tag">Web Hosting</span></div>
+          <div class="offer-title">Hostinger — Up to 70% Off + Free Domain</div>
+          <div class="offer-desc">AI-powered website building. Launch your site for as low as $2.99/mo with free domain, SSL and 24/7 support. One of the best deals in web hosting.</div>
+          <a href="https://www.hostinger.com/" target="_blank" class="offer-cta">Claim Deal →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">ProductSamples</div>
+          <div class="offer-tags"><span class="offer-tag green">100% Free</span><span class="offer-tag">Product Samples</span></div>
+          <div class="offer-title">ProductSamples.com — Free Sample Box</div>
+          <div class="offer-desc">Top brands send you free product samples curated to your profile. Beauty, snacks, wellness and more — delivered to your door at no cost.</div>
+          <a href="https://productsamples.com/" target="_blank" class="offer-cta">Get Free Samples →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">Zendesk</div>
+          <div class="offer-tags"><span class="offer-tag green">No Credit Card</span><span class="offer-tag">Business Tool</span></div>
+          <div class="offer-title">Zendesk — 14-Day AI Trial</div>
+          <div class="offer-desc">AI-powered customer and employee service platform. Set up AI agents and experience the full platform — no credit card required.</div>
+          <a href="https://www.zendesk.com/free-trial/" target="_blank" class="offer-cta">Start Free Trial →</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">I Love Free Things</div>
+          <div class="offer-tags"><span class="offer-tag green">Free Directory</span><span class="offer-tag">Updated Daily</span></div>
+          <div class="offer-title">ILFT — Freebies Directory</div>
+          <div class="offer-desc">Curated daily directory of the best free stuff online — samples, trials, giveaways, gift cards and more. New offers added every single day.</div>
+          <a href="https://www.ilovefreethings.com/" target="_blank" class="offer-cta">Browse Freebies →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var CONTENT_KEY = 'vault_offers_unlocked';
+      function checkUnlock() {
+        if (localStorage.getItem(CONTENT_KEY) === '1') {
+          var el = document.getElementById('content-locked');
+          if (el) {
+            el.classList.remove('gate-hide');
+            el.querySelectorAll('.section-hdr,.offers-section,.updated').forEach(function(s){ s.classList.add('revealed'); });
+          }
+        }
+      }
+      if (localStorage.getItem(CONTENT_KEY) === '1') checkUnlock();
+      var t = setInterval(function() { checkUnlock(); if (localStorage.getItem(CONTENT_KEY) === '1') clearInterval(t); }, 1500);
+      window.unlockVault = function() {
+        localStorage.setItem(CONTENT_KEY, '1');
+        var el = document.getElementById('content-locked');
+        if (el) {
+          el.classList.remove('gate-hide');
+          el.querySelectorAll('.section-hdr,.offers-section,.updated').forEach(function(s){ s.classList.add('revealed'); });
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+    })();
+  </script>
+</body>
+</html>
